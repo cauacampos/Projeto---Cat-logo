@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap');
+
+
+* {margin: 0;
+    padding: 0;
+
+}
+
+body {
+    background-color: black;
+    background-image: url(../img/backpurple.jpg);
+}
+
+body header { display: flex;
+    flex-wrap: wrap;
+}
+
+body header p1 {
+    font-family: 'Gowun Batang', serif;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    color: rgb(101, 86, 189);
+    padding: 2rem;
+    font-size: 2vw;
+}
+
+body header span {
+    font-family: 'Gowun Batang', serif;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: 35%;
+    color:floralwhite;
+    padding: 2rem 4rem 2rem 10rem;
+    font-size: 1.2vw;
+    line-height: 2vw;
+    text-align:right;
+}
+
+body header img {
+    display: flex;
+    width: 30%;
+    justify-content: flex-end;
+    padding: 2rem 3rem 2rem 8rem;
+}
+
+body section#devs{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(0, 0, 0, 0.788);
+}
+
+body section#devs P2 {
+    font-family: 'Gowun Batang', serif;
+    font-size: 1.5vw;
+    width: 100%;
+    padding: 4rem;
+    color: floralwhite;
+    display: flex;
+    justify-content: center;
+    color: rgb(101, 86, 189);
+    text-shadow: blanchedalmond 3px;
+    }
+
+body section#devs img{
+    width: 15%;
+    padding: 1rem 4rem;
+    margin-left: 8rem;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+body section#devs div#descrição {
+    font-family: 'Gowun Batang', serif;
+    font-size: 1.2vw;
+    width: 40%;
+    padding: 2rem 2rem 0rem 0rem;
+    color: floralwhite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body section#devs div#redes{
+    
+    width: 100%;
+    padding: 0rem 2rem 2rem 0rem;
+    display: flex;
+    justify-content: center;
+}
+
+body section#devs div#redes a{
+    font-size: 3vw;
+    padding: 0rem 3rem 0rem 3rem;
+}
