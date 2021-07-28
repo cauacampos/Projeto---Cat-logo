@@ -64,7 +64,11 @@ body section#devs P2 {
     text-shadow: blanchedalmond 3px;
     }
 
-body section#devs img{
+body section#devs div#carlos {
+    display: flex;
+    flex-wrap: wrap;
+}
+body section#devs div#carlos img{
     width: 15%;
     padding: 1rem 4rem;
     margin-left: 8rem;
@@ -73,7 +77,7 @@ body section#devs img{
     border-radius: 50%;
 }
 
-body section#devs div#descrição {
+body section#devs div#carlos div#descrição {
     font-family: 'Gowun Batang', serif;
     font-size: 1.2vw;
     width: 40%;
@@ -84,15 +88,14 @@ body section#devs div#descrição {
     justify-content: center;
 }
 
-body section#devs div#redes{
-    
+body section#devs div#carlos div#redes{
     width: 100%;
     padding: 0rem 2rem 2rem 0rem;
     display: flex;
     justify-content: center;
 }
 
-body section#devs div#redes a{
+body section#devs div#carlos div#redes a{
     font-size: 3vw;
     padding: 0rem 3rem 0rem 3rem;
 }
