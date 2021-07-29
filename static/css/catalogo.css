@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Helvetica";
+  }
+  
+  body {
+    font-family: 'Helvetica';
+    text-align:center;
+    background-color: #000000;
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+  }
+  
+  .center{
+    max-width: 1480px;
+    padding: 10px;
+  }
+  
+  .clear{clear: both;}
+  
+  header{
+    background: #141414;
+    padding: 0 40px;
+  }
+  
+  /* Menu 1 - Header */
+  
+  .header-left{
+    float: left;
+  }
+  
+  .header-left img{
+    max-width: 140px;
+  }
+  .menu-header{
+    position: relative;
+    top: -15px;
+    display: inline-block;
+    margin-left: 30px;
+  }
+  
+  .menu-header li{
+    font-size: 14px;
+    display: inline-block;
+    margin-right: 15px;
+  }
+  
+  .menu-header a{
+    color: white;
+    text-decoration: none;
+  }
+  
+  .container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .page-title {
+    color: #ffffff;
+    margin-top: 5px;
+  }
+  
+  #listaFilmes img {
+    margin: 10px;
+  }
+  
+  .form-wrapper {
+    margin: 0 0 15px;
+  }
+  
+  .form-wrapper input {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 15px;
+  }
+  
+  .form-wrapper button {
+    border: 0;
+    color: #ffffff;
+    background: #DA1E26;
+    font-weight:bold;
+    padding: 15px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: .3s;
+  }
+  
+  .form-wrapper button:hover {
+    opacity:.8;
+  }
