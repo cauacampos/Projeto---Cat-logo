@@ -1,51 +1,74 @@
-@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap');
-
-
-* {margin: 0;
+*{
+    margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: "Helvetica";
+  }
+  
+  body {
+    font-family: 'Helvetica';
+    background-color: #000000;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 
-}
-
-body {
-    background-color: black;
-    background-image: url(../img/backpurple.jpg);
-}
-
-body header { display: flex;
-    flex-wrap: wrap;
-}
+    .center{
+    max-width: 1480px;
+    padding: 1px;
+  }
+  
+  nav{
+    background: #141414;
+    padding: 20px;
+    display: flex;
+  }
+  
+  .nav-left{
+    float: left;
+  }
+  
+  .nav-left img{
+    max-width: 150px;
+  }
+  .menu-nav{
+    position: relative;
+    top: -15px;
+    display: inline-block;
+    margin-left: 30px;
+  }
 
 body header p1 {
-    font-family: 'Gowun Batang', serif;
     display: flex;
     width: 100%;
     justify-content: center;
-    color: rgb(101, 86, 189);
+    color: floralwhite;
     padding: 2rem;
     font-size: 2vw;
 }
 
-body header span {
-    font-family: 'Gowun Batang', serif;
+body header div {
     display: flex;
     justify-content: center;
-    align-content: center;
-    align-items: center;
-    width: 35%;
     color:floralwhite;
-    padding: 2rem 4rem 2rem 10rem;
     font-size: 1.2vw;
-    line-height: 2vw;
-    text-align:right;
+    line-height: 2vw; 
+    align-items: center;
 }
 
 body header img {
     display: flex;
     width: 30%;
     justify-content: flex-end;
-    padding: 2rem 3rem 2rem 8rem;
+    padding: 1.5rem;
+    margin-right: 10rem;
 }
 
+header div span {
+    font-size: 1.5vw;
+    font-weight: 700;
+    color:floralwhite;
+    padding: 3rem;
+}
 body section#devs{
     display: flex;
     flex-wrap: wrap;
@@ -53,7 +76,7 @@ body section#devs{
 }
 
 body section#devs P2 {
-    font-family: 'Gowun Batang', serif;
+    font-family: 'Helvetica', serif;
     font-size: 1.5vw;
     width: 100%;
     padding: 4rem;
@@ -78,7 +101,7 @@ body section#devs div#carlos img{
 }
 
 body section#devs div#carlos div#descrição {
-    font-family: 'Gowun Batang', serif;
+    font-family: 'Helvetica', serif;
     font-size: 1.2vw;
     width: 40%;
     padding: 2rem 2rem 0rem 0rem;
@@ -98,4 +121,4 @@ body section#devs div#carlos div#redes{
 body section#devs div#carlos div#redes a{
     font-size: 3vw;
     padding: 0rem 3rem 0rem 3rem;
-}
+} 
