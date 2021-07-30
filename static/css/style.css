@@ -41,7 +41,7 @@ body header p1 {
     display: flex;
     width: 100%;
     justify-content: center;
-    color: floralwhite;
+    color: rgb(182, 32, 32);
     padding: 2rem;
     font-size: 2vw;
 }
@@ -77,21 +77,21 @@ body section#devs{
 
 body section#devs P2 {
     font-family: 'Helvetica', serif;
-    font-size: 1.5vw;
+    font-size: 2vw;
     width: 100%;
     padding: 4rem;
     color: floralwhite;
     display: flex;
     justify-content: center;
-    color: rgb(101, 86, 189);
+    color: rgb(182, 32, 32);
     text-shadow: blanchedalmond 3px;
     }
 
-body section#devs div#carlos {
+body section#devs div#time {
     display: flex;
     flex-wrap: wrap;
 }
-body section#devs div#carlos img{
+body section#devs div#time img{
     width: 15%;
     padding: 1rem 4rem;
     margin-left: 8rem;
@@ -100,8 +100,9 @@ body section#devs div#carlos img{
     border-radius: 50%;
 }
 
-body section#devs div#carlos div#descrição {
+body section#devs div#time div#descrição {
     font-family: 'Helvetica', serif;
+    font-weight: 500;
     font-size: 1.2vw;
     width: 40%;
     padding: 2rem 2rem 0rem 0rem;
@@ -111,14 +112,14 @@ body section#devs div#carlos div#descrição {
     justify-content: center;
 }
 
-body section#devs div#carlos div#redes{
+body section#devs div#time div#redes{
     width: 100%;
     padding: 0rem 2rem 2rem 0rem;
     display: flex;
     justify-content: center;
 }
 
-body section#devs div#carlos div#redes a{
+body section#devs div#time div#redes a{
     font-size: 3vw;
     padding: 0rem 3rem 0rem 3rem;
 } 
