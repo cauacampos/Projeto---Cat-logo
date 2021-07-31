@@ -42,8 +42,12 @@ body header p1 {
     width: 100%;
     justify-content: center;
     color: rgb(182, 32, 32);
-    padding: 2rem;
+    padding: 25px;
     font-size: 2vw;
+}
+
+body header{display: flex;
+flex-wrap: wrap;
 }
 
 body header div {
@@ -53,21 +57,24 @@ body header div {
     font-size: 1.2vw;
     line-height: 2vw; 
     align-items: center;
-}
+  flex-wrap: wrap;}
 
 body header img {
     display: flex;
-    width: 30%;
-    justify-content: flex-end;
-    padding: 1.5rem;
-    margin-right: 10rem;
+    max-width: 25%;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 15px;
+    margin-right: 3vw;
 }
 
 header div span {
+  max-width: 60%;
     font-size: 1.5vw;
     font-weight: 700;
     color:floralwhite;
-    padding: 3rem;
+    padding: 3vw;
+    flex-wrap: wrap;
 }
 
 body section#devs{
