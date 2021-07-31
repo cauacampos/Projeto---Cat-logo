@@ -14,18 +14,21 @@
 
     .center{
     max-width: 1480px;
-    padding: 1px;
+    padding: 10px;
   }
+
+  .clear{clear: both;}
   
   nav{
     background: #141414;
-    padding: 20px;
-    display: flex;
+    padding: 0 40px;
+    display: grid;
+    justify-content: space-between;
+    width: 100%;
   }
 
-  .nav-right{
-    display: flex;
-    margin-left: 50rem;
+  nav a{
+    width: 30px;
   }
   
   .nav-left{
@@ -35,14 +38,19 @@
   .nav-left img{
     max-width: 150px;
   }
-  .menu-nav{
+/* PRA DEPOIS*/
+  .menu{
     position: relative;
     top: -15px;
     display: inline-block;
     margin-left: 30px;
   }
-
-
+  
+  .menu li{
+    font-size: 14px;
+    display: inline-block;
+    margin-right: 15px;
+  }
 
 body header p1 {
     display: flex;
