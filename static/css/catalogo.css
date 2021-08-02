@@ -21,34 +21,32 @@ body {
 
 .clear{clear: both;}
 
-header{
+nav {
   background: #141414;
   padding: 0 40px;
 }
 
-/* Menu 1 - Header */
-
-.header-left{
+.nav-left{
   float: left;
 }
 
-.header-left img{
+.nav-left img{
   max-width: 140px;
 }
-.menu-header{
+.menu-nav{
   position: relative;
   top: -15px;
   display: inline-block;
   margin-left: 30px;
 }
 
-.menu-header li{
+.menu-nav li{
   font-size: 14px;
   display: inline-block;
   margin-right: 15px;
 }
 
-.menu-header a{
+.menu-nav a{
   color: white;
   text-decoration: none;
 }
