@@ -8,7 +8,7 @@ db = SQLAlchemy(app)
 class Filme(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     nome = db.Column(db.String(150), nullable=False)
-    cartaz = db.Column(db.String(300), nullable=False)
+    cartaz = db.Column(db.String(500), nullable=False)
 
     def __init__(self, nome, cartaz):
         self.nome = nome
