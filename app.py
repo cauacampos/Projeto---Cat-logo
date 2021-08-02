@@ -22,7 +22,7 @@ def index():
 @app.route('/<id>')
 def filme_pelo_id(id):
     filme = Filme.query.get(id)
-    return render_template('index.html', filme=filme)
+    return render_template('catalogo.html', filme=filme)
 
 @app.route('/new', methods=['GET', 'POST'])
 def new():
