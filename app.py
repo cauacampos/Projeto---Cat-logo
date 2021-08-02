@@ -1,22 +1,58 @@
-from flask import Flask, render_template, request, redirect #pip install flask
-from flask_sqlalchemy import SQLAlchemy # pip install flask-sqlalchemy
+from flask import Flask, render_template, request, redirect
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///musicas.sqlite3'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///filmes.sqlite3'
 db = SQLAlchemy(app)
 
 class Filme(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    nome_filme = db.Column(db.String(150), nullable=False)
-    link_image = db.Column(db.String(300), nullable=False)
+    nome = db.Column(db.String(150), nullable=False)
+    cartaz = db.Column(db.String(300), nullable=False)
 
-    def __init__(self, nome_filme, link_image):
-        self.nome_filme = nome_filme
-        self.link_image = link_image
+    def __init__(self, nome, cartaz):
+        self.nome = nome
+        self.cartaz = cartaz
 
 @app.route('/')
 def index():
     filmes = Filme.query.all()
-    return render_template('index.html', filmes=filmes)
+    return render_template('catalogo.html', filmes=filmes)
 
+@app.route('/<id>')
+def filme_pelo_id(id):
+    filme = Filme.query.get(id)
+    return render_template('index.html', filme=filme)
 
+@app.route('/new', methods=['GET', 'POST'])
+def new():
+    if request.method == 'POST':
+        filme = Filme(
+            request.form['nome'],
+            request.form['cartaz']
+            )
+        db.session.add(filme)
+        db.session.commit()
+        return redirect('/#catalogo')
+    return render_template('new.html')
+
+@app.route('/edit/<id>', methods=['GET', 'POST'])
+def edit(id):
+    filme = Filme.query.get(id)
+    if request.method == 'POST':
+        filme.nome = request.form['nome']
+        filme.cartaz = request.form['cartaz']
+        db.session.commit()
+        return redirect('/#catalogo')
+    return render_template('edit.html', filme=filme)
+
+@app.route('/delete/<id>')
+def delete(id):
+    filme = Filme.query.get(id)
+    db.session.delete(filme)
+    db.session.commit()
+    return redirect('/#catalogo')
+
+if __name__ == '__main__':
+    db.create_all()
+    app.run(debug=True)
