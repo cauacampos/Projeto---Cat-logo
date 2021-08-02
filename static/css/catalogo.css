@@ -1,183 +1,275 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Helvetica";
-}
-  
-body {
-  font-family: 'Helvetica';
-  text-align:center;
-  background-color: #000000;
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica', sans-serif;
+    letter-spacing: 0.2rem;
 }
 
-.center{
-  max-width: 1480px;
-  padding: 10px;
+html, body {
+    width: 100%;
+    height: 100%;
+    scroll-behavior: smooth;
+    background-color: #1f1f1f;
 }
 
-.clear{clear: both;}
+/* Estilos da página index.html */
 
-header{
-  background: #141414;
-  padding: 0 40px;
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #090809;
+    width: 100%;
 }
 
-/* Menu 1 - Header */
-
-.header-left{
-  float: left;
+nav a img {
+    max-width: 100%;
+    width: 10rem;
+    padding: 0.3rem;
+    margin-left: 1rem;
 }
 
-.header-left img{
-  max-width: 140px;
-}
-.menu-header{
-  position: relative;
-  top: -15px;
-  display: inline-block;
-  margin-left: 30px;
+nav ul {
+    display: flex;
+    list-style: none;
 }
 
-.menu-header li{
-  font-size: 14px;
-  display: inline-block;
-  margin-right: 15px;
+nav ul li {
+    padding: 1.5rem;
 }
 
-.menu-header a{
-  color: white;
-  text-decoration: none;
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: all 0.3s ease-out;
 }
 
-.container {
-  text-align: center;
-  padding: 20px;
+nav ul li a:hover {
+    color: #F40000;
 }
 
-.page-title {
-  color: #ffffff;
-  margin-top: 5px;
+section#catalogo {
+    max-width: 100%;
+    padding: 2rem;
+    overflow-x: auto;
 }
 
-#listaFilmes img {
-  margin: 10px;
+section#catalogo h3 {
+    text-align: center;
+    color: #fff;
+    font-size: 3rem;
+    letter-spacing: 0.3rem;
+    margin-bottom: 3rem;
 }
 
-.form-wrapper {
-  margin: 0 0 15px;
+section#catalogo table {
+    border-collapse: collapse;
+    width: 100%;
+    border-spacing: 0;
+    color: #fff;
 }
 
-.form-wrapper input {
-  display: block;
-  margin: 0 auto;
-  padding: 10px 15px;
+section#catalogo table th, td {
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
 }
 
-.form-wrapper button {
-  border: 0;
-  color: #ffffff;
-  background: #DA1E26;
-  font-weight:bold;
-  padding: 15px 20px;
-  font-size: 16px;
-  border-radius: 4px;
-  margin-top: 20px;
-  cursor: pointer;
-  transition: .3s;
+section#catalogo table a {
+    padding: 1rem;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
 }
 
-.form-wrapper button:hover {
-  opacity:.8;
+section#catalogo table a:hover {
+    color: #F40000;
 }
 
-/* estilização do modal */
+/* Fim do estilos da página index.html */
 
-/* section.modal {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  background-color: #00000080;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  pointer-events: auto;
+/* Estilos da página new.html */
+
+section#new {
+    background-color: #1f1f1f;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-section.modal div#card{
-  width: 30rem;
-  position: relative;
-  background-color: #DA1E26;
-  border-radius: .5rem;
+section#new div#card {
+    position: relative;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 2%;
+    border: 1px solid #001052;
+    width: 400px;
 }
 
-section.modal div#card h2{
-  padding: 2rem;
-  margin: 0;
-  color: #fff;
+section#new div.label-float {
+    position: relative;
+    padding-top: 13px;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
-section.modal div#card a#fechar-modal{
-  position: absolute;
-  right: 0;
-  top: 0;
-  font-size: 2rem;
-  color: #000;
-  padding: 1.5rem;
+section#new div.label-float input {
+    width: 100%;
+    padding: 5px 5px;
+    display: inline-block;
+    border: 0;
+    border-bottom: 2px solid #090809;
+    background-color: transparent;
+    outline: none;
+    min-width: 180px;
+    font-size: 16px;
+    transition: all 0.3s ease-out;
+    border-radius: 0;
 }
 
-section.modal div#card a#fechar-modal:hover{
-  color: #fff;
+section#new div.label-float input:focus {
+    border-bottom: 2px solid #090809;
 }
 
-section.modal div#card p{
-  color: #fff;
-  padding: 1rem;
-  text-align: center;
-  font-size: 1.5rem;
-  line-height: 2rem;
+section#new div.label-float label {
+    color: #090809;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 13px;
+    transition: all 0.3s ease-out;
 }
 
-section.modal div#card div#btns{
-  display: flex;
-  justify-content: center;
-  padding: 1rem 2rem 2rem 2rem;
+section#new div.label-float input:focus+label, section#new div.label-float input:valid+label {
+    font-size: 13px;
+    margin-top: 0;
+    color: #090809;
 }
 
-section.modal div#card div#btns a{
-  text-decoration: none;
-  padding: .9rem;
-  border-radius: .5rem;
-  width: 7rem;
-  text-align: center;
+section#new div.justify-center {
+    display: flex;
+    justify-content: center;
 }
 
-section.modal div#card div#btns a.cancelar-btn{
-  color: #fff;
-  border: solid 1px #fff;
-  margin-right: 1rem;
-  transition: all .5s ease-out;
+section#new button {
+    background-color: transparent;
+    border-color: #090809;
+    color: #090809;
+    padding: 0.8rem;
+    font-size: 12pt;
+    margin-top: 2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.4s ease-out;
 }
 
-section.modal div#card div#btns a.cancelar-btn:hover{
-  background-color: #fff;
-  color: #DA1E26;
+section#new button:hover {
+    background-color: #090809;
+    color: #fff;
 }
 
-section.modal div#card div#btns a.excluir-btn{
-  color: #fff;
-  border: solid 1px #fff;
-  transition: all .5s ease-out;
+section#new h4 {
+    text-align: center;
+    color: #090809;
+    font-size: 3rem;
+    margin-bottom: 2rem;
 }
 
-section.modal div#card div#btns a.excluir-btn:hover{
-  background-color: #fff;
-  color: #DA1E26;
-} */
-/* fim da estilização do modal */
+/* Fim dos estilos da página new.html */
+
+/* Estilos do modal */
+
+section.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #00000080;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: auto;
+}
+
+section.modal div#card {
+    width: 30rem;
+    position: relative;
+    background-color: #DA1E26;
+    border-radius: .5rem;
+}
+
+section.modal div#card h2 {
+    padding: 2rem;
+    margin: 0;
+    color: #fff;
+}
+
+section.modal div#card a#fechar {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 2rem;
+    color: #000;
+    padding: 1.5rem;
+}
+
+section.modal div#card a#fechar:hover {
+    color: #fff;
+}
+
+section.modal div#card hr {
+    width: 90%;
+    margin: 0 auto;
+}
+
+section.modal div#card p {
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+section.modal div#card div#btns {
+    display: flex;
+    justify-content: center;
+    padding: 0 2rem 2rem 2rem;
+}
+
+section.modal div#card div#btns a {
+    text-decoration: none;
+    padding: .9rem;
+    border-radius: .5rem;
+    width: 7rem;
+    text-align: center;
+}
+
+section.modal div#card div#btns a.btn-cancelar {
+    color: #fff;
+    border: solid 1px #fff;
+    margin-right: 1rem;
+    transition: all .5s ease-out;
+}
+
+section.modal div#card div#btns a.btn-cancelar:hover {
+    background-color: #fff;
+    color: #DA1E26;
+}
+
+section.modal div#card div#btns a.btn-apagar {
+    color: #fff;
+    border: solid 1px #fff;
+    transition: all .5s ease-out;
+}
+
+section.modal div#card div#btns a.btn-apagar:hover {
+    background-color: #fff;
+    color: #DA1E26;
+}
+
+/* Fim dos estilos do modal */

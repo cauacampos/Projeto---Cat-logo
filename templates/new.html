@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=" {{ url_for('static', filename='css/catalogo.css')}} ">
+    <title>NINEFLIX | Novo Filme/Série</title>
+</head>
+<body>
+    
+    <nav>
+        <a href="/">
+            <img src=" {{ url_for('static', filename='img/logo.png')}} " alt="">
+        </a>
+    </nav>
+
+    <section id="new">
+        <div id="card">
+            <h4>Novo Filme/Série</h4>
+
+            <form action="/new" method="POST">
+                <div class="label-float">
+                    <input type="text" name="nome" id="nome">
+                    <label for="nome">Nome do Filme/Série</label>
+                </div>
+
+                <div class="label-float">
+                    <input type="text" name="cartaz" id="cartaz">
+                    <label for="cartaz">Cartaz</label>
+                </div>
+
+                <div>
+                    <button type="submit">Cadastrar</button>
+                </div>
+            </form>
+        </div>
+        
+    </section>
+
+</body>
+</html>
