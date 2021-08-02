@@ -1,41 +1,52 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Helvetica";
-  }
-  
-  body {
-    font-family: 'Helvetica';
-    background-color: #000000;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica";
+}
 
-    .center{
-    max-width: 1480px;
-    padding: 1px;
-  }
-  
-  nav{
-    background: #141414;
-    padding: 20px;
-    display: flex;
-  }
-  
-  .nav-left{
-    float: left;
-  }
-  
-  .nav-left img{
-    max-width: 150px;
-  }
-  .menu-nav{
-    position: relative;
-    top: -15px;
-    display: inline-block;
-    margin-left: 30px;
-  }
+body {
+  font-family: 'Helvetica';
+  background-color: #000000;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.center {
+  max-width: 1480px;
+  padding: 10px;
+}
+
+nav {
+  background: #141414;
+  padding: 0 40px;
+}
+
+.nav-left {
+  float: left;
+}
+
+.nav-left img {
+  max-width: 140px;
+}
+
+.menu-nav {
+  position: relative;
+  top: -15px;
+  display: inline-block;
+  margin-left: 30px;
+}
+
+.menu-nav li{
+  font-size: 14px;
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.menu-nav a{
+  color: white;
+  text-decoration: none;
+}
 
 
   body header{
@@ -84,7 +95,7 @@ header div div#txt p {
     justify-content: center;
   align-items: center;}
 
-body section#devs{
+body section#devs {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -92,7 +103,7 @@ body section#devs{
   min-height: 100vh;
 }
 
-.box{
+.box {
   position: relative;
   width: 300px;
   height: 300px;
@@ -104,11 +115,11 @@ body section#devs{
   transition: 0.5s;
 }
 
-.box:hover{
+.box:hover {
   height: 400px;
 }
 
-.box .imgBX{
+.box .imgBX {
   position: absolute;
   top: 0;
   left: 0;
@@ -118,17 +129,17 @@ body section#devs{
   box-sizing: border-box;
 }
 
-.box .imgBX img{
+.box .imgBX img {
   max-width: 100%;
   opacity: 0.1;
   transition: 0.5s;
 }
 
-.box:hover .imgBX img{
+.box:hover .imgBX img {
   opacity: 1;
 }
 
-.box:before{
+.box:before {
   content: "";
   position: absolute;
   top: -2px;
@@ -139,7 +150,7 @@ body section#devs{
   z-index: -1;
 }
 
-.box:after{
+.box:after {
   content: "";
   position: absolute;
   top: -2px;
@@ -151,34 +162,34 @@ body section#devs{
   filter: blur(40px);
 }
 
-.box:before, .box:after{
-  background: linear-gradient(235deg,#89ff00,#010615,#00bcd4);
+.box:before, .box:after {
+  background: linear-gradient(235deg, #89ff00, #010615, #00bcd4);
 }
 
-.box:nth-child(2):before, .box:nth-child(2):after{
-  background: linear-gradient(235deg,#ff005e,#010615,#fbff00);
+.box:nth-child(2):before, .box:nth-child(2):after {
+  background: linear-gradient(235deg, #ff005e, #010615, #fbff00);
 }
 
-.box:nth-child(3):before, .box:nth-child(3):after{
-  background: linear-gradient(235deg,#772aff,#010615,#2196f3);
+.box:nth-child(3):before, .box:nth-child(3):after {
+  background: linear-gradient(235deg, #772aff, #010615, #2196f3);
 }
 
-.box:nth-child(3):before, .box:nth-child(3):after{
-  background: linear-gradient(235deg,#772aff,#010615,#2196f3);
+.box:nth-child(3):before, .box:nth-child(3):after {
+  background: linear-gradient(235deg, #772aff, #010615, #2196f3);
 }
 
-.box:nth-child(5):before, .box:nth-child(5):after{
-  background: linear-gradient(235deg,#ffbd00,#010615,#390099);
+.box:nth-child(5):before, .box:nth-child(5):after {
+  background: linear-gradient(235deg, #ffbd00, #010615, #390099);
 }
 
-.box .content{
+.box .content {
   position: absolute;
   bottom: 0;
   left: 10px;
   right: 10px;
   bottom: 10px;
   height: 90px;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0, 0, 0, 0.4);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -186,11 +197,11 @@ body section#devs{
   transition: 0.5s;
 }
 
-.box:hover .content{
+.box:hover .content {
   opacity: 1;
 }
 
-.box .content h2{
+.box .content h2 {
   font-size: 20px;
   color: #fff;
   font-weight: 500;
@@ -198,7 +209,7 @@ body section#devs{
   letter-spacing: 1px;
 }
 
-.box .content h2 span{
+.box .content h2 span {
   font-size: 14px;
   color: #fff;
   font-weight: 200;
@@ -206,13 +217,13 @@ body section#devs{
 }
 
 body section#devs P2 {
-    font-family: 'Helvetica', serif;
-    font-size: 2vw;
-    width: 100%;
-    padding: 4rem;
-    color: floralwhite;
-    display: flex;
-    justify-content: center;
-    color: rgb(182, 32, 32);
-    text-shadow: blanchedalmond 3px;
-    }
+  font-family: 'Helvetica', serif;
+  font-size: 2vw;
+  width: 100%;
+  padding: 4rem;
+  color: floralwhite;
+  display: flex;
+  justify-content: center;
+  color: rgb(182, 32, 32);
+  text-shadow: blanchedalmond 3px;
+}

@@ -1,63 +1,81 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang='pt-br'>
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/catalogo.css">
+    <link rel="stylesheet" href=" {{ url_for('static', filename='css/catalogo.css')}} ">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>NINEFLIX</title>
 </head>
 
 <body>
 
-    <header>
-        <div class="center">
-            <div class="header-left">
-                <a href=""><img src="../static/img/logo.png"></a>
-                <!-- <div class="menu-header">
-                    <ul>
-                        <li><a href="">Inicio</a></li>
-                        <li><a href="">Séries</a></li>
-                        <li><a href="">Filmes</a></li>
-                        <li><a href="">Bombando</a></li>
-                        <li><a href="">Minha lista</a></li>
-                    </ul>
-                </div> -->
-            </div>
+    <nav>
 
-            <div class="clear"></div>
-        </div>
-    </header>
+        <a href="/">
+            <img src=" {{ url_for('static', filename='img/logo.png')}} " alt="">
+        </a>
 
-    <div class="container">
-        <p class="page-title">
-            Qual seu filme favorito?
-        </p>
-        <div class="form-wrapper">
-            <input type="text" id="filme" name="filme" placeholder="Insira endereço de imagem">
-            <button onClick="adicionarFilme()">Adicionar Filme</button>
-        </div>
-    </div>
-    <div id="listaFilmes"></div>
+        <ul>
+            <li>
+                <a href="/new">Novo Filme</a>
+            </li>
+        </ul>
 
-    <!-- {% depois precisa colocar o if %}
-    <section class="modal">
-        <div id="card">
-            <a href="/rota da pagina dos itens" id="fechar-modal"><i class="fa fa-times-circle-o" aria-hidden="true"></i></a>
-            <h2>Excluir item</h2>
-            <p>Você tem certeza que deseja concluir? {{pegar la no app.py o nome do filme}} será excluido</p>
+    </nav>
 
-            <div id="btns">
-                <a class="cancelar-btn" href="/rota da pagina dos itens">Cancelar</a>
-                <a class="excluir-btn" href="/rota da pagina delete dos itens/{{especificar qual filme}}">Excluir</a>
-            </div>
-        </div>
+    <section id="catalogo">
+
+        <h3>Catálogo</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Filme/Série</th>
+                    <th>Cartaz</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for f in filmes %}
+                <tr>
+                    <td>{{f.id}}</td>
+                    <td>{{f.nome}}</td>
+                    <td>
+                        <img src="{{f.cartaz}}"></img>
+                    </td>
+                    <td>
+                        <a href="/edit/{{f.id}}">Editar</a>
+                        <a href="/{{f.id}}">Apagar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
     </section>
-    {% endif %} -->
 
-    <script src="../static/js/catalogo.js"></script>
+    {% if filme != undefined %}
+    <section class="modal">
+       <div id="card">
+
+          <a href="/#catalogo" id="fechar"><i class="fa fa-times" aria-hidden="true"></i></a>
+          <h2>Confirmação</h2>
+          <hr>
+
+          <p>Deseja realmente apagar o filme/série {{filme.nome}} </p>
+          <div id="btns">
+             <a class="btn-cancelar" href="/#catalogo">Cancelar</a>
+             <a class="btn-apagar" href="/delete/{{filme.id}}">Apagar</a>
+          </div>
+       </div>
+    </section>
+    {% endif %}
+
 </body>
 
 </html>
