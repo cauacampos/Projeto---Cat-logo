@@ -48,47 +48,52 @@ nav {
   text-decoration: none;
 }
 
+
+  body header{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
 body header p1 {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  color: rgb(182, 32, 32);
-  padding: 25px;
-  font-size: 2vw;
-}
+      position: relative;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        color: rgb(182, 32, 32);
+        padding: 25px;
+        padding-bottom: 0%;
+        font-size: 2vw;
+    }
 
-body header {
-  display: flex;
-  flex-wrap: wrap;
-}
+body header div {  
+      display: flex;
+      justify-content: center;
+      position: relative;
+      
+    }
 
-body header div {
-  display: flex;
-  justify-content: center;
-  color: floralwhite;
-  font-size: 1.2vw;
-  line-height: 2vw;
-  align-items: center;
-  flex-wrap: wrap;
-}
+body header div div#img img{
+    position: relative;
+    display: block;
+    width: 60%; 
+    margin: 4vw;   
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+   }
 
-body header img {
-  display: flex;
-  max-width: 25%;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 15px;
-  margin-right: 3vw;
-}
-
-header div span {
-  max-width: 60%;
-  font-size: 1.5vw;
-  font-weight: 700;
-  color: floralwhite;
-  padding: 3vw;
-  flex-wrap: wrap;
-}
+header div div#txt p {
+    padding-left: 4vw;
+    line-height: 2vw; 
+    font-size: 1.5vw;
+    font-weight: 700;
+    color:floralwhite;
+    display: flex;
+    justify-content: center;
+  align-items: center;}
 
 body section#devs {
   display: flex;
