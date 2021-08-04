@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://ayoxqpey:7piSTuDTaP8hNx8XREMJUrHu7Pigfcyi@kesavan.db.elephantsql.com/ayoxqpey3'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://ayoxqpey:7piSTuDTaP8hNx8XREMJUrHu7Pigfcyi@kesavan.db.elephantsql.com/ayoxqpey'
 db = SQLAlchemy(app)
 
 class Filme(db.Model):
