@@ -6,19 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/css/login.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Autenticação</title>
 </head>
 <nav>
-
-    <a href="/">
-        <img src=" {{ url_for('static', filename='img/logo.png')}} " alt="">
-    </a>
-
-    <a href="/adm" id="config" target="_blank"> 
-        <i class="fa fa-cog" aria-hidden="true"></i>
-     </a>  
-
+    <a class="logo" href=""><img src="../static/img/logo.png" id="img"></a>
+    <div class="mobile-menu">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+    </div>
+    <ul class="nav-list">
+        <li><a href="">Catálogo</a></li>
+        <li><a href="">Administração</a></li>
+    </ul>
 </nav>
 
 
@@ -34,5 +35,9 @@
         <button type="submit">Enviar</button>
 
     </section>
+
+    <footer></footer>
+    <script src="../static/js/inicio.js"></script>
+
 </body>
 </html>
