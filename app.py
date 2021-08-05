@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, flash, session
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -16,47 +16,80 @@ class Filme(db.Model):
 
 @app.route('/')
 def index():
-    filmes = Filme.query.all()
-    return render_template('catalogo.html', filmes=filmes)
+    session['user_logado'] = None
+    return render_template('index.html')
+
+@app.route('/catalogo')
+def catalogo():
+    return render_template('catalogo.html')
+
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
+@app.route('/auth', methods=['GET', 'POST'])
+def auth():
+    if request.form['senha'] == 'adm123':
+        session['user_logado'] = 'logado'
+        flash('Login feito com sucesso!')
+        return redirect('/adm')
+    else:
+        flash('Erro no login, tente novamente!')
+        return redirect('/login')
 
 @app.route('/adm')
 def adm():
+    if 'user_logado' not in session or session['user_logado'] == None:
+        flash('Faça o login antes de acessar essa rota!')
+        return redirect('/login')
     filmes = Filme.query.all()
     return render_template('adm.html', filmes=filmes)
 
-# @app.route('/<id>')
-# def filme_pelo_id(id):
-#     filme = Filme.query.get(id)
-#     return render_template('catalogo.html', filme=filme)
+@app.route('/new', methods=['GET', 'POST'])
+def new():
+    if request.method == 'POST':
+        filme = Filme(
+            request.form['nome'],
+            request.form['cartaz']
+            )
+        db.session.add(filme)
+        db.session.commit()
+        flash('Filme adicionado com sucesso!')
+        return redirect('/adm')
+    flash('Você não tem autorização para acessar essa rota!')
+    return redirect('/login')
 
-# @app.route('/new', methods=['GET', 'POST'])
-# def new():
-#     if request.method == 'POST':
-#         filme = Filme(
-#             request.form['nome'],
-#             request.form['cartaz']
-#             )
-#         db.session.add(filme)
-#         db.session.commit()
-#         return redirect('/#catalogo')
-#     return render_template('new.html')
+@app.route('/<id>')
+def filme_por_id(id):
+    filmeDel = Filme.query.get(id)
+    return render_template('adm.html', filmeDel=filmeDel, filme='')
 
-# @app.route('/edit/<id>', methods=['GET', 'POST'])
-# def edit(id):
-#     filme = Filme.query.get(id)
-#     if request.method == 'POST':
-#         filme.nome = request.form['nome']
-#         filme.cartaz = request.form['cartaz']
-#         db.session.commit()
-#         return redirect('/#catalogo')
-#     return render_template('edit.html', filme=filme)
+@app.route('/delete/<id>')
+def delete(id):
+    if 'user_logado' not in session or session['user_logado'] == None:
+        flash('Faça o login antes de acessar essa rota!')
+        return redirect('/login')
 
-# @app.route('/delete/<id>')
-# def delete(id):
-#     filme = Filme.query.get(id)
-#     db.session.delete(filme)
-#     db.session.commit()
-#     return redirect('/#catalogo')
+    filme = Filme.query.get(id)
+    db.session.delete(filme) #para apagar a tabela no browse do elephant digitar: drop table 'filme'
+    db.session.commit()
+    flash('Filme apagado com sucesso!')
+    return redirect('/adm')
+
+@app.route('/edit/<id>', methods=['GET', 'POST'])
+def edit(id):
+    if 'user_logado' not in session or session['user_logado'] == None:
+        flash('Faça o login antes de acessar essa rota!')
+        return redirect('/login')
+
+    filme = Filme.query.get(id)
+    filmes = Filme.query.all()
+    if request.method == 'POST':
+        filme.nome = request.form['nome']
+        filme.cartaz = request.form['cartaz']
+        db.session.commit()
+        return redirect('/adm')
+    return render_template('adm.html', filme=filme, filmes=filmes)
 
 if __name__ == '__main__':
     db.create_all()
