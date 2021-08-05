@@ -179,9 +179,9 @@ section#login-box form button {
 section#login-box form button:hover {
     background-color: #ff1100;
     color: #fff;   
-                }
-section#login-box form a{
-    background-color: #141414;
+  }
+section#login-box form a i{
+    background-color: rgb(48, 48, 48);
     text-decoration: none;
     color: #ffffff;
     font-size: 1rem;
