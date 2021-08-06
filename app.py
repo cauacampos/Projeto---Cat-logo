@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, flash, session
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+app.secret_key = 'nineflix'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://ayoxqpey:7piSTuDTaP8hNx8XREMJUrHu7Pigfcyi@kesavan.db.elephantsql.com/ayoxqpey'
 db = SQLAlchemy(app)
 
@@ -21,7 +22,8 @@ def index():
 
 @app.route('/catalogo')
 def catalogo():
-    return render_template('catalogo.html')
+    filmes = Filme.query.all()
+    return render_template('catalogo.html', filmes=filmes)
 
 @app.route('/login')
 def login():
@@ -43,7 +45,7 @@ def adm():
         flash('Faça o login antes de acessar essa rota!')
         return redirect('/login')
     filmes = Filme.query.all()
-    return render_template('adm.html', filmes=filmes)
+    return render_template('adm.html', filmes=filmes, filme='')
 
 @app.route('/new', methods=['GET', 'POST'])
 def new():
