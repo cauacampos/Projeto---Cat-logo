@@ -2,9 +2,9 @@ from flask import Flask, render_template, request, redirect, flash, session
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-app.secret_key = 'nineflix'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://ayoxqpey:7piSTuDTaP8hNx8XREMJUrHu7Pigfcyi@kesavan.db.elephantsql.com/ayoxqpey'
 db = SQLAlchemy(app)
+app.secret_key = 'nineflix'
 
 class Filme(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -19,25 +19,6 @@ class Filme(db.Model):
 def index():
     session['user_logado'] = None
     return render_template('index.html')
-
-@app.route('/catalogo')
-def catalogo():
-    filmes = Filme.query.all()
-    return render_template('catalogo.html', filmes=filmes)
-
-@app.route('/login')
-def login():
-    return render_template('login.html')
-
-@app.route('/auth', methods=['GET', 'POST'])
-def auth():
-    if request.form['senha'] == 'adm123':
-        session['user_logado'] = 'logado'
-        flash('Login feito com sucesso!')
-        return redirect('/adm')
-    else:
-        flash('Erro no login, tente novamente!')
-        return redirect('/login')
 
 @app.route('/adm')
 def adm():
@@ -60,11 +41,6 @@ def new():
         return redirect('/adm')
     flash('Você não tem autorização para acessar essa rota!')
     return redirect('/login')
-
-@app.route('/<id>')
-def filme_por_id(id):
-    filmeDel = Filme.query.get(id)
-    return render_template('adm.html', filmeDel=filmeDel, filme='')
 
 @app.route('/delete/<id>')
 def delete(id):
@@ -92,6 +68,30 @@ def edit(id):
         db.session.commit()
         return redirect('/adm')
     return render_template('adm.html', filme=filme, filmes=filmes)
+
+@app.route('/catalogo')
+def catalogo():
+    filmes = Filme.query.all()
+    return render_template('catalogo.html', filmes=filmes)
+
+@app.route('/<id>')
+def filme_por_id(id):
+    filmeDel = Filme.query.get(id)
+    return render_template('adm.html', filmeDel=filmeDel, filme='')
+
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
+@app.route('/auth', methods=['GET', 'POST'])
+def auth():
+    if request.form['senha'] == 'adm123':
+        session['user_logado'] = 'logado'
+        flash('Login feito com sucesso!')
+        return redirect('/adm')
+    else:
+        flash('Erro no login, tente novamente!')
+        return redirect('/login')
 
 if __name__ == '__main__':
     db.create_all()
