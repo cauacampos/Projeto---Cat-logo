@@ -10,10 +10,12 @@ class Filme(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     nome = db.Column(db.String(150), nullable=False)
     cartaz = db.Column(db.String(500), nullable=False)
+    # categoria = db.Column(db.String(150), nullable=False)
 
-    def __init__(self, nome, cartaz):
+    def __init__(self, nome, cartaz): #passar categoria como parametro
         self.nome = nome
         self.cartaz = cartaz
+        # self.categoria = categoria
 
 @app.route('/')
 def index():
@@ -34,6 +36,7 @@ def new():
         filme = Filme(
             request.form['nome'],
             request.form['cartaz']
+            # request.form['categoria']
             )
         db.session.add(filme)
         db.session.commit()
@@ -65,6 +68,7 @@ def edit(id):
     if request.method == 'POST':
         filme.nome = request.form['nome']
         filme.cartaz = request.form['cartaz']
+        # filme.categoria = request.form['categoria']
         db.session.commit()
         return redirect('/adm')
     return render_template('adm.html', filme=filme, filmes=filmes)
@@ -92,6 +96,21 @@ def auth():
     else:
         flash('Erro no login, tente novamente!')
         return redirect('/login')
+
+############## descomentar quando zerar a tabela e criar com coluna categoria
+# @app.route('/filter', methods=['GET', 'POST'])
+# def filter():
+#     filmes = Filme.query.filter_by(categoria=request.form['search']).all()
+#     return render_template('catalogo.html', filmes=filmes)
+############## descomentar quando zerar a tabela e criar com coluna categoria
+
+
+############## testando com coluna nome
+@app.route('/filter', methods=['GET', 'POST'])
+def filter():
+    filmes = Filme.query.filter_by(nome=request.form['search']).all()
+    return render_template('catalogo.html', filmes=filmes) 
+############## testando com coluna nome 
 
 if __name__ == '__main__':
     db.create_all()
