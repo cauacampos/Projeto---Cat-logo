@@ -144,7 +144,8 @@ body {
       color: rgb(228, 0, 0);
       background-color: rgb(48, 48, 48);
       font-size: 2vw;
-      padding: 1rem;
+      padding: 3rem;
+      padding-bottom: 1rem ;
       display: flex;
       justify-content: center;  
   }
