@@ -14,6 +14,7 @@ body {
     background-size: cover;
     display: flex;
     flex-wrap: wrap;
+    position: relative;
   }
   
   nav a{
@@ -117,20 +118,24 @@ body {
 
 
   body section#login-box{
-    padding-top: 12vw;
+    /*padding-top: 12vw;*/
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
     flex-wrap: wrap;
     height: 100%;
     width: 100%;
   }
 
   body section#login-box form{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     padding: 3rem;
     background-color: rgb(48, 48, 48);
     width: 40rem;
-    position: relative;
+    margin-top: 10%;
     box-shadow: rgba(149, 157, 165, .3) 0px 8px 24px;
     border-radius: 2rem;
     }
@@ -146,6 +151,7 @@ body {
   
  body section#login-box form input, textarea{
     width: 100%;
+    background-color: antiquewhite;
     padding: 0.3em;
     font-size: 1.2rem;
     margin: 0 0 1em;
@@ -157,7 +163,7 @@ body {
 section#login-box form label {
         width: 100%;
         font-size: 1rem;
-        }
+    }
 
 section#login-box form button {
     border: 1px solid #ff0000;
@@ -180,8 +186,9 @@ section#login-box form button:hover {
     background-color: #ff1100;
     color: #fff;   
   }
+
 section#login-box form a i{
-    background-color: rgb(48, 48, 48);
+    background-color: rgba(48, 48, 48, 0);
     text-decoration: none;
     color: #ffffff;
     font-size: 1rem;
