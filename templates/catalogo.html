@@ -14,19 +14,46 @@
 
     <nav>
 
-        <a href="/">
-            <img src=" {{ url_for('static', filename='img/logo.png')}} " alt="">
-        </a>
+        <!-- so coloquei dentro de uma div para dividir a nav em duas div e colocar o display flex-->
+        <div id="logo">
+            <a href="/">
+                <img src=" {{ url_for('static', filename='img/logo.png')}} " alt="">
+            </a>
+        </div>
+        
 
-        <a href="/login" id="config"> 
-            <i class="fa fa-cog" aria-hidden="true"></i>
-         </a>  
+        <!-- tive a ideia de colocar o filter iguai do netflix, então coloquei o o filter e o icone config juntos nuna div, mas cada um dentro de suas proprias div -->
+        <div id="filtro-config">
+            <!-- eu não seu se necessáriamente precisa dessa div filtro-filmes ou talvez poderia falar com o form-->
+            <div id="filtro-filmes">
+                <form action="/filter" method="POST">
+                    <!-- a div filtro-input era para conseguir envolver os dois na borda branca-->
+                    <div id="filtro-input">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                        <!-- o input aparace um 'X' azul mas eu não soube estilizar ainda -->
+                        <input type="search" placeholder="Pesquisar" id="search" name="search">
+                    </div>
+                    <!-- <button class="btn btn-danger" type="submit">Pesquisar</button> -->
+                </form>
+            </div>
 
+            <!-- aqui coloquei esta na div pelo motivo de flex-->
+            <div id="icon-config">
+                <a href="/login" id="config"> 
+                    <i class="fa fa-cog" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+        
     </nav>
 
     <section id="catalogo">
-
-        <h3>Catálogo</h3>
+        <!-- coloquei os dois dentro de uma div para conseguir jogar o display flex -->
+        <div id="title-lista">
+            <h3>Catálogo</h3>
+            <a href="/catalogo">Listar Tudo</a>
+        </div>
+        <!-- coloquei os dois dentro de uma div para conseguir jogar o display flex -->
 
         <table>
             <thead>
