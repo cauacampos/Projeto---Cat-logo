@@ -11,6 +11,22 @@ html, body {
   background-color: rgb(48, 48, 48);
 }
 
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #161a1d; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(182, 32, 32); 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e5383b; 
+}
+
 aside#left {
   background-color: #fff;
   padding: 3rem;

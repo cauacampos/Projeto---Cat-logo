@@ -12,6 +12,22 @@ html, body {
     background-color: #1f1f1f;
 }
 
+::-webkit-scrollbar {
+    width: 9px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #161a1d; 
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgb(182, 32, 32); 
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #e5383b; 
+  }
+
 /* Estilos da página index.html */
 
 nav {
