@@ -295,3 +295,17 @@ body section#devs P2 {
     color: rgb(182, 32, 32);
     text-shadow: blanchedalmond 3px;
     }
+
+footer{
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  background: #000000;
+  padding: 1rem;
+  font-weight: 700;
+}
+
+footer li{
+  font-style: none;
+  text-decoration: none;
+}
