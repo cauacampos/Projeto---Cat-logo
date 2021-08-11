@@ -118,7 +118,11 @@ body {
 
 
   body section#login-box{
-    /*padding-top: 12vw;*/
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -135,7 +139,7 @@ body {
     padding: 3rem;
     background-color: rgb(48, 48, 48);
     width: 40rem;
-    margin-top: 10%;
+    margin-top: 10vw;
     box-shadow: rgba(149, 157, 165, .3) 0px 8px 24px;
     border-radius: 2rem;
     }

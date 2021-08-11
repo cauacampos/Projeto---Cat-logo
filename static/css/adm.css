@@ -87,8 +87,8 @@ article#msg{
 
 article#msg ul {
   width: 40%;
-  background-color: rgb(48, 48, 48);
-  color: rgb(180, 1, 1);
+  background-color: #97161c;
+  color: whitesmoke;
   padding: 1rem;
   font-size: 1.2rem;
   font-weight:600;
@@ -251,7 +251,7 @@ section.modal {
 section.modal div#card {
     width: 30rem;
     position: relative;
-    background-color: #DA1E26;
+    background-color: #97161c;
     border-radius: .5rem;
 }
 
