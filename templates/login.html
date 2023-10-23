@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/login.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Autenticação</title>
+</head>
+<body>
+    
+<nav>
+    <a class="logo" href="/"><img src="../static/img/logo.png" id="img"></a>
+    <div class="mobile-menu">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+    </div>
+    <ul class="nav-list">
+        <li><a href="/catalogo">Catálogo</a></li>
+    </ul>
+</nav>
+
+
+<section id=login-box>
+    <form action='/auth' method="POST">
+        <a href="/#index">
+            <i class="fa fa-home" aria-hidden="true"></i>
+        </a>
+        
+
+        <h1>Acesso a área administrativa</h1>
+        <input type="password" placeholder="Digite a senha de acesso" id="senha" name="senha">
+        <button id="enviar">
+            Entrar
+        </button>
+
+    </section>
+
+    <footer></footer>
+    <script src="../static/js/inicio.js"></script>
+    <!--<script src="../static/js/login.js"></script>-->
+
+</body>
+</html>

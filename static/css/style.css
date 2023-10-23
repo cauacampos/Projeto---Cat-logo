@@ -1,101 +1,311 @@
-@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap');
-
-
-* {margin: 0;
+*{
+    margin: 0;
     padding: 0;
+    font-family: "Helvetica";
+  }
 
+html{
+  scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #161a1d; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(182, 32, 32); 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e5383b; 
+}
+  
 body {
-    background-color: black;
-    background-image: url(../img/backpurple.jpg);
+  font-family: 'Helvetica';
+  background-color: #000000;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-body header { display: flex;
-    flex-wrap: wrap;
+nav a{
+  color: #fff;
+  text-decoration: none;
+}
+
+nav a:hover{
+  opacity: 0.7;
+}
+
+nav a #img{
+  width: 50%;
+  padding: 1vw;
+}
+
+nav{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  background: #141414;
+  height: 8vh;
+}
+
+.nav-list{
+  list-style: none;
+  display: flex;
+}
+
+.nav-list li{
+  letter-spacing: 3px;
+  margin-left: 32px;
+}
+
+.mobile-menu{
+  display: none;
+  cursor: pointer;
+}
+
+.mobile-menu div{
+  width: 32px;
+  height: 2px;
+  background: #fff;
+  margin: 8px;
+  transition: 0.3s;
+}
+
+@media (max-width: 999px) {
+  body{
+    overflow-x: hidden;
+  }
+  .nav-list{
+    position: absolute;
+    top: 8vh;
+    right: 0;
+    width: 50vw;
+    height:60vh;
+    background: #141414;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transform: translateX(100%);
+    transition: transform  0.3s ease-in;
+  }
+  .nav-list li{
+    margin-left: 0;
+    opacity: 0;
+  }
+  .mobile-menu{
+    display: block;
+  }
+}
+
+.nav-list.active{
+  transform: translateX(0);
+}
+
+@keyframes navLinkFade{
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.mobile-menu.active .line1{
+  transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.mobile-menu.active .line2{
+  opacity: 0;
+}
+
+.mobile-menu.active .line3{
+  transform: rotate(45deg) translate(-5px, -7px);
 }
 
 body header p1 {
-    font-family: 'Gowun Batang', serif;
     display: flex;
-    width: 100%;
     justify-content: center;
-    color: rgb(101, 86, 189);
+    color: rgb(182, 32, 32);
     padding: 2rem;
     font-size: 2vw;
 }
 
-body header span {
-    font-family: 'Gowun Batang', serif;
+body header div {
     display: flex;
     justify-content: center;
-    align-content: center;
-    align-items: center;
-    width: 35%;
     color:floralwhite;
-    padding: 2rem 4rem 2rem 10rem;
     font-size: 1.2vw;
-    line-height: 2vw;
-    text-align:right;
+    line-height: 2vw; 
+    align-items: center;
 }
 
 body header img {
     display: flex;
     width: 30%;
     justify-content: flex-end;
-    padding: 2rem 3rem 2rem 8rem;
+    padding: 1.5rem;
+    margin-right: 10rem;
+}
+
+header div span {
+    font-size: 1.5vw;
+    font-weight: 700;
+    color:floralwhite;
+    padding: 3rem;
 }
 
 body section#devs{
-    display: flex;
-    flex-wrap: wrap;
-    background-color: rgba(0, 0, 0, 0.788);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  z-index: initial;
+}
+
+.box{
+  position: relative;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px;
+  background: #060c21;
+  transition: 0.5s;
+}
+
+.box:hover{
+  height: 400px;
+}
+
+.box .imgBX{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.box .imgBX img{
+  max-width: 100%;
+  opacity: 0.1;
+  transition: 0.5s;
+}
+
+.box:hover .imgBX img{
+  opacity: 1;
+}
+
+.box:before{
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: #fff;
+  z-index: -2;
+}
+
+.box:after{
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: #fff;
+  z-index: -3;
+  filter: blur(40px);
+}
+
+.box:before, .box:after{
+  background: linear-gradient(235deg,#89ff00,#010615,#00bcd4);
+}
+
+.box:nth-child(2):before, .box:nth-child(2):after{
+  background: linear-gradient(235deg,#ff005e,#010615,#fbff00);
+}
+
+.box:nth-child(3):before, .box:nth-child(3):after{
+  background: linear-gradient(235deg,#772aff,#010615,#2196f3);
+}
+
+.box:nth-child(3):before, .box:nth-child(3):after{
+  background: linear-gradient(235deg,#772aff,#010615,#2196f3);
+}
+
+.box:nth-child(5):before, .box:nth-child(5):after{
+  background: linear-gradient(235deg,#ffbd00,#010615,#390099);
+}
+
+.box .content{
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  height: 90px;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.box:hover .content{
+  opacity: 1;
+}
+
+.box .content h2{
+  font-size: 20px;
+  color: #fff;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 1px;
+}
+
+.box .content h2 span{
+  font-size: 14px;
+  color: #fff;
+  font-weight: 200;
+  letter-spacing: 2px;
 }
 
 body section#devs P2 {
-    font-family: 'Gowun Batang', serif;
-    font-size: 1.5vw;
+    font-family: 'Helvetica', serif;
+    font-size: 2vw;
     width: 100%;
-    padding: 4rem;
+    padding: 1rem;
     color: floralwhite;
     display: flex;
     justify-content: center;
-    color: rgb(101, 86, 189);
+    color: rgb(182, 32, 32);
     text-shadow: blanchedalmond 3px;
     }
 
-body section#devs div#carlos {
-    display: flex;
-    flex-wrap: wrap;
-}
-body section#devs div#carlos img{
-    width: 15%;
-    padding: 1rem 4rem;
-    margin-left: 8rem;
-    display: flex;
-    justify-content: center;
-    border-radius: 50%;
+footer{
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  background: #000000;
+  padding: 1rem;
+  font-weight: 700;
 }
 
-body section#devs div#carlos div#descrição {
-    font-family: 'Gowun Batang', serif;
-    font-size: 1.2vw;
-    width: 40%;
-    padding: 2rem 2rem 0rem 0rem;
-    color: floralwhite;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-body section#devs div#carlos div#redes{
-    width: 100%;
-    padding: 0rem 2rem 2rem 0rem;
-    display: flex;
-    justify-content: center;
-}
-
-body section#devs div#carlos div#redes a{
-    font-size: 3vw;
-    padding: 0rem 3rem 0rem 3rem;
+footer li{
+  font-style: none;
+  text-decoration: none;
 }
